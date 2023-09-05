@@ -1,3 +1,3 @@
-## Welcome to my blog
+## Articles
 
-Hey, thanks for visiting my blog.
+1. First article
