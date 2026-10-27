@@ -28,3 +28,8 @@
 .ix .bo.show{transform:scale(1)}
 .ix .lg{font-size:.78rem;min-height:2.6em;margin-top:6px;white-space:normal}
 .ix .stt{font-weight:700;min-height:1.4em;margin-top:4px}
+.ix .rkt.nt,.ix .rkt.nt *{transition:none!important}
+.ix .rkt.go2{transition:bottom 1.6s ease-in}
+.ix .rkt{transition:bottom .8s linear,transform .7s ease-in-out,opacity .3s}
+.ix .rkt.crash{transition:bottom 1s cubic-bezier(.5,0,1,.6),transform 1s linear,opacity .3s}
+.ix .cd0{display:block;min-height:3em;font-size:.8rem}

@@ -2,27 +2,31 @@
 <label><input type="checkbox" class="fx"> apply the fix: <code>th % 2 != 0</code></label><br>
 <button class="go">▶ Launch both</button><button class="rs">Reset</button>
 <div class="cols pan" style="margin-top:8px"></div>
-<script>(function(){var r=document.currentScript.parentElement,pan=r.querySelector('.pan'),fx=r.querySelector('.fx'),tm=null,PS=[];
+<script>(function(){var r=document.currentScript.parentElement,pan=r.querySelector('.pan'),fx=r.querySelector('.fx'),tm=null,PS=[],TO=[];
 var SVG='<svg width="60" height="100" viewBox="0 0 60 100"><polygon points="30,0 44,24 16,24" fill="#e8e8ee"/><rect x="16" y="24" width="28" height="50" fill="#cfd3dc"/><circle cx="30" cy="42" r="6" fill="#4a90d9"/><polygon points="16,74 6,92 16,86" fill="#d6455d"/><polygon points="44,74 54,92 44,86" fill="#d6455d"/><rect x="8" y="66" width="8" height="14" fill="#666"/><rect x="44" y="66" width="8" height="14" fill="#666"/><polygon class="fl" points="12,80 7,100 17,100" fill="#ffb347"/><polygon class="fr" points="48,80 43,100 53,100" fill="#ffb347"/></svg>';
 [{n:'Python',m:function(x){return ((x%2)+2)%2}},{n:'C',m:function(x){return x%2}}].forEach(function(d){
 var c=document.createElement('div');c.className='card';
 c.innerHTML='<h5>'+d.n.toUpperCase()+'</h5><code class="cd0"></code><div class="sc"><div class="gr"></div><div class="cd">T-10</div><div class="rkt">'+SVG+'</div><div class="bo">💥</div></div><div class="lg"></div><div class="stt"></div>';
 pan.appendChild(c);PS.push({d:d,c:c,rk:c.querySelector('.rkt'),fl:c.querySelector('.fl'),fr:c.querySelector('.fr'),bo:c.querySelector('.bo'),cd:c.querySelector('.cd'),lg:c.querySelector('.lg'),st:c.querySelector('.stt'),code:c.querySelector('.cd0')})});
 function cond(){return fx.checked?'th % 2 != 0':'th % 2 == 1'}
-function reset(){clearInterval(tm);tm=null;PS.forEach(function(p){p.i=0;p.a=0;p.dead=false;p.done=false;
-p.rk.className='rkt';p.rk.style.bottom='26px';p.rk.style.transform='rotate(0deg)';p.fl.classList.remove('on');p.fr.classList.remove('on');p.bo.classList.remove('show');
-p.cd.textContent='T-10';p.lg.textContent='';p.st.textContent='';p.st.className='stt';
+function clr(){while(TO.length)clearTimeout(TO.pop())}
+function reset(){clearInterval(tm);tm=null;clr();PS.forEach(function(p){p.i=0;p.a=0;p.x=0;p.dead=false;p.done=false;
+p.rk.className='rkt nt';p.rk.style.bottom='26px';p.rk.style.transform='translateX(0px) rotate(0deg)';p.fl.classList.remove('on');p.fr.classList.remove('on');p.bo.classList.remove('show');
+void p.rk.offsetWidth;p.rk.className='rkt';
+p.cd.textContent='T-10';p.lg.textContent='Press Launch.';p.st.textContent='';p.st.className='stt';
 p.code.textContent=(p.d.n=='C'?'if (':'if ')+cond()+(p.d.n=='C'?') fire(LEFT); else fire(RIGHT);':': fire(LEFT) else: fire(RIGHT)')})}
 function step(){var live=0;PS.forEach(function(p){if(p.dead||p.done)return;live++;
 var th=-10+p.i,m=p.d.m(th),left=fx.checked?m!==0:m===1;
 p.fl.classList.toggle('on',left);p.fr.classList.toggle('on',!left);
-p.a+=left?8:-8;p.rk.style.transform='rotate('+p.a+'deg)';p.rk.style.bottom=(26+(p.i+1)*9)+'px';
+p.a+=left?12:-12;p.x+=Math.sin(p.a*Math.PI/180)*10;
+p.rk.style.transform='translateX('+p.x+'px) rotate('+p.a+'deg)';p.rk.style.bottom=(26+Math.pow(p.i+1,1.5)*3.4)+'px';
 p.cd.textContent='T'+(th<0?'-'+(-th):'-0');
 p.lg.innerHTML='th = '+th+' → th % 2 = <b>'+m+'</b> → '+(fx.checked?'!= 0':'== 1')+'? <b>'+left+'</b> → fire <b>'+(left?'LEFT':'RIGHT')+'</b>';
-if(Math.abs(p.a)>=35){p.dead=true;var s=p.a<0?-1:1;p.rk.classList.add('crash');p.rk.style.transform='rotate('+(s*110)+'deg)';p.rk.style.bottom='26px';
-setTimeout(function(){p.bo.classList.add('show');p.fl.classList.remove('on');p.fr.classList.remove('on')},850);
+if(Math.abs(p.a)>=60){p.dead=true;var s=p.a<0?-1:1,fx2=p.x+s*40;
+TO.push(setTimeout(function(){p.fl.classList.remove('on');p.fr.classList.remove('on');p.rk.classList.add('crash');p.rk.style.transform='translateX('+fx2+'px) rotate('+(s*260)+'deg)';p.rk.style.bottom='26px';p.cd.textContent='ATTITUDE LOST'},450));
+TO.push(setTimeout(function(){p.bo.style.marginLeft=(-36+fx2)+'px';p.bo.classList.add('show');p.rk.style.opacity='.35'},1500));
 p.st.className='stt bad';p.st.textContent='💥 Lost attitude at T-'+(-th)+': '+(left?'LEFT':'RIGHT')+' fired every tick, the other never did.'}
-else if(p.i==10){p.done=true;p.rk.style.bottom='215px';p.rk.style.transform='rotate(0deg)';p.st.className='stt ok';p.st.textContent='✓ Liftoff! The thrusters alternated all the way to T-0.'}
+else if(p.i==10){p.done=true;TO.push(setTimeout(function(){p.fl.classList.add('on');p.fr.classList.add('on');p.rk.classList.add('go2');p.rk.style.bottom='420px';p.rk.style.transform='translateX(0px) rotate(0deg)';p.cd.textContent='LIFTOFF!'},450));p.st.className='stt ok';p.st.textContent='✓ Liftoff! The thrusters alternated all the way to T-0.'}
 p.i++});if(!live){clearInterval(tm);tm=null}}
 r.querySelector('.go').onclick=function(){reset();step();tm=setInterval(step,900)};
 r.querySelector('.rs').onclick=reset;fx.onchange=reset;reset()})()</script></div>
