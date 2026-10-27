@@ -28,10 +28,6 @@ paginate = 10
     url = "/posts/"
     weight = 10
   [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 20
-  [[menu.main]]
     name = "About"
     url = "/about/"
     weight = 30
