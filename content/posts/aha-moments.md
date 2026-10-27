@@ -10,8 +10,6 @@ ShowToc: true
 
 I was introduced to coding in my 10th standard. The language was C. It was unforgiving of mistakes, but also very much rewarding. Back then, the hardest problems were to print `*` in triangles, squares, and some weird shapes. As a school-kid, there was a joy in successfully printing a k-row triangle, and then extending the design to a diamond pattern. Boring as it sounds, the act of struggling to find the correct loop-invariant made me internalize loops. The pattern repeated in grad school: seg-faults forced me to go deeper and that's how pointers finally clicked.
 
-*Figure 1: How coding looked in high school. Try it yourself.*
-
 {{< stars >}}
 
 Yesterday, a tiny surprise in Python sent me down a rabbit hole. I was writing simple code to divide two integers. I expected -1 divided by 2 to be 0. Python gave me -1.
