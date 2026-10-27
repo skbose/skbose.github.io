@@ -1,0 +1,16 @@
+<div class="ix"><div class="ix-title">Inside CPython's <code>l_divmod</code><small>step through the fix-up</small></div>
+<label>a <input type="number" class="a" value="-5"></label><label>b <input type="number" class="b" value="2"></label>
+<button class="nx">Next step ▸</button><button class="rs">Reset</button>
+<div class="o st" style="white-space:normal;min-height:3em"></div>
+<script>(function(){var r=document.currentScript.parentElement,A=r.querySelector('.a'),B=r.querySelector('.b'),S=r.querySelector('.st'),i=0,st=[];
+function build(){var a=+A.value,b=+B.value;st=[];if(!b){st.push('b = 0 → ZeroDivisionError');return}
+var q=Math.trunc(Math.abs(a)/Math.abs(b))*(Math.sign(a)*Math.sign(b)||1),r2=a-b*q;if(Object.is(q,-0))q=0;
+st.push('1. Long division on the magnitudes: |'+a+'| ÷ |'+b+'| → '+Math.trunc(Math.abs(a)/Math.abs(b))+' remainder '+Math.abs(a)%Math.abs(b)+'.');
+st.push('2. Reattach the signs (truncated result): q = '+q+', r = '+r2+'.');
+var need=r2!==0&&((r2<0)!==(b<0));
+if(need){st.push('3. Remainder sign ('+(r2<0?'−':'+')+') ≠ divisor sign ('+(b<0?'−':'+')+') → fix-up: r += b → '+(r2+b)+', q −= 1 → '+(q-1)+'.');q-=1;r2+=b}
+else st.push('3. Remainder is zero or already matches the divisor sign → no fix-up needed.');
+st.push('4. Check: '+b+' × '+q+' + '+r2+' = '+(b*q+r2)+' = '+a+' ✓  Python: '+a+' // '+b+' = '+q+', '+a+' % '+b+' = '+r2)}
+function d(){S.innerHTML=st.slice(0,i).map(function(x){return '<div>'+x+'</div>'}).join('')||'<span style="color:var(--secondary)">Press “Next step”.</span>'}
+r.querySelector('.nx').onclick=function(){if(i<st.length)i++;d()};
+r.querySelector('.rs').onclick=A.oninput=B.oninput=function(){i=0;build();d()};build();d()})()</script></div>

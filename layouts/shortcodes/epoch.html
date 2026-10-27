@@ -1,0 +1,11 @@
+<div class="ix"><div class="ix-title">Time before 1970<small><code>day, secs = divmod(t, 86400)</code></small></div>
+<label>t = <input type="range" class="t" min="-200000" max="200000" value="-1" step="1"> <b class="tv"></b> s</label><br>
+<button data-t="-1">t = -1</button><button data-t="-86400">-1 day</button><button data-t="-90061">-1d 1h 1m 1s</button><button data-t="0">epoch</button>
+<div class="cols" style="margin-top:8px"><div class="card f"><h5>FLOOR (Python)</h5></div><div class="card c"><h5>TRUNCATE (C)</h5></div></div>
+<script>(function(){var r=document.currentScript.parentElement,t=r.querySelector('.t'),tv=r.querySelector('.tv'),f=r.querySelector('.f'),c=r.querySelector('.c');
+function hms(s){var a=Math.abs(s),h=Math.floor(a/3600),m=Math.floor(a%3600/60),x=a%60,p=function(v){return String(v).padStart(2,'0')};return (s<0?'-':'')+p(h)+':'+p(m)+':'+p(x)}
+function dt(day){return new Date(day*86400000).toISOString().slice(0,10)}
+function d(){var v=+t.value;tv.textContent=v;var B=86400,fq=Math.floor(v/B),fr=v-B*fq,tq=Math.trunc(v/B),tr=v-B*tq;
+f.innerHTML='<h5>FLOOR (Python)</h5>day = '+fq+' → '+dt(fq)+'<br>secs = '+fr+' → '+hms(fr)+'<br><span class="ok">✓ correct date and time</span>';
+var good=tr>=0;c.innerHTML='<h5>TRUNCATE (C)</h5>day = '+tq+' → '+dt(tq)+'<br>secs = '+tr+' → '+hms(tr)+'<br>'+(good?'<span class="ok">✓ same as floor</span>':'<span class="bad">✗ wrong day, impossible time of day</span>')}
+t.oninput=d;r.querySelectorAll('button').forEach(function(b){b.onclick=function(){t.value=b.dataset.t;d()}});d()})()</script></div>

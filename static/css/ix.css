@@ -1,0 +1,18 @@
+.ix{border:1px solid var(--border);background:var(--entry);border-radius:var(--radius);padding:14px 16px;margin:1.4em 0;font-size:.95rem}
+.ix-title{font-weight:700;margin-bottom:8px}
+.ix-title small{font-weight:400;color:var(--secondary);margin-left:6px}
+.ix label{margin-right:12px;display:inline-block;margin-bottom:6px}
+.ix input[type=number],.ix select{width:5em;padding:3px 6px;border:1px solid var(--border);border-radius:6px;background:var(--code-bg);color:var(--primary)}
+.ix input[type=range]{vertical-align:middle;max-width:60%}
+.ix button{cursor:pointer;border:1px solid var(--border);background:var(--code-bg);color:var(--primary);border-radius:6px;padding:4px 10px;margin:2px 4px 2px 0;font:inherit}
+.ix button:hover{border-color:var(--secondary)}
+.ix pre.o,.ix .o{font-family:var(--mono,monospace);background:var(--code-bg);border-radius:6px;padding:8px 10px;margin:8px 0 0;overflow-x:auto;line-height:1.35;white-space:pre}
+.ix .cols{display:flex;gap:10px;flex-wrap:wrap}
+.ix .card{flex:1 1 200px;border:1px solid var(--border);border-radius:8px;padding:8px 10px;background:var(--code-bg);font-family:var(--mono,monospace);font-size:.9rem}
+.ix .card h5{margin:0 0 4px;font-family:inherit;font-size:.8rem;color:var(--secondary);font-weight:600}
+.ix .ok{color:#2a9d4a}.ix .bad{color:#d6455d}
+.ix .strip{display:flex;gap:2px;margin:4px 0 10px;flex-wrap:nowrap}
+.ix .cell{flex:1 1 0;min-width:0;text-align:center;font-family:var(--mono,monospace);font-size:.7rem;padding:5px 0;border-radius:3px;color:#111}
+.ix .opt{display:block;width:100%;text-align:left;margin:4px 0}
+.ix .opt.right{border-color:#2a9d4a}.ix .opt.wrong{border-color:#d6455d}
+.ix .why{margin-top:6px;color:var(--secondary);display:none}

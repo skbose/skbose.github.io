@@ -1,0 +1,13 @@
+<div class="ix"><div class="ix-title">Mod is a group sorter<small>same colour = same equivalence class</small></div>
+<label>mod n = <input type="number" class="n" value="2" min="2" max="7"></label>
+<div class="o" style="white-space:normal"><div>Integer</div><div class="strip a"></div><div>Python <code>%</code></div><div class="strip p"></div><div>C / Java / JS / Go <code>%</code></div><div class="strip c"></div></div>
+<div class="m" style="margin-top:6px;color:var(--secondary)"></div>
+<script>(function(){var r=document.currentScript.parentElement,n=r.querySelector('.n');
+function cell(t,c,bad){var e=document.createElement('div');e.className='cell';e.textContent=t;e.style.background='hsl('+(c*57)+',70%,'+(bad?'60%':'78%')+')';if(bad)e.style.outline='2px solid #d6455d';return e}
+function d(){var k=Math.max(2,Math.min(7,+n.value||2)),A=r.querySelector('.a'),P=r.querySelector('.p'),C=r.querySelector('.c'),bad=0;
+[A,P,C].forEach(function(x){x.innerHTML=''});
+for(var x=-8;x<=8;x++){var p=((x%k)+k)%k,c=x%k;
+A.appendChild(cell(x,p));P.appendChild(cell(p,p));
+var diff=c!=p;if(diff)bad++;C.appendChild(cell(c,p,diff))}
+r.querySelector('.m').textContent=bad+' of 17 integers get a different representative in C (outlined). Python always picks from [0, '+k+').'}
+n.oninput=d;d()})()</script></div>

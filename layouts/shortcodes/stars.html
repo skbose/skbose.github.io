@@ -1,0 +1,12 @@
+<div class="ix"><div class="ix-title">Print the stars<small>the 10th-standard classic</small></div>
+<label>rows <input type="range" min="1" max="9" value="4" class="n"> <b class="nv">4</b></label>
+<select class="s"><option>triangle</option><option>square</option><option>diamond</option></select>
+<pre class="o"></pre>
+<script>(function(){var r=document.currentScript.parentElement,n=r.querySelector('.n'),s=r.querySelector('.s'),o=r.querySelector('.o'),nv=r.querySelector('.nv');
+function row(i,k){return ' '.repeat(k-i)+'* '.repeat(i).trimEnd()}
+function d(){var k=+n.value,L=[],i;nv.textContent=k;
+if(s.value=='triangle')for(i=1;i<=k;i++)L.push(row(i,k));
+else if(s.value=='square')for(i=1;i<=k;i++)L.push('* '.repeat(k).trimEnd());
+else{for(i=1;i<=k;i++)L.push(row(i,k));for(i=k-1;i>=1;i--)L.push(row(i,k))}
+o.textContent=L.join('\n')}
+n.oninput=s.onchange=d;d()})()</script></div>

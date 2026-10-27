@@ -1,0 +1,6 @@
+<div class="ix"><div class="ix-title">Grid cells across zero<small><code>x // 5</code> vs truncating division</small></div>
+<div class="o" style="white-space:normal"><div>Floor: x // 5</div><div class="strip f"></div><div>Truncate</div><div class="strip t"></div></div>
+<div class="m" style="margin-top:6px;color:var(--secondary)"></div>
+<script>(function(){var r=document.currentScript.parentElement,F=r.querySelector('.f'),T=r.querySelector('.t'),N=5,cnt={};
+for(var x=-12;x<=12;x++){[['f',Math.floor(x/N)],['t',Math.trunc(x/N)]].forEach(function(p){var e=document.createElement('div');e.className='cell';e.textContent=x;e.style.background='hsl('+(((p[1]%6)+6)%6*60)+',70%,78%)';e.title='cell '+p[1];(p[0]=='f'?F:T).appendChild(e);if(p[0]=='t')cnt[p[1]]=(cnt[p[1]]||0)+1})}
+r.querySelector('.m').textContent='Truncating puts '+cnt[0]+' values in cell 0 (-4…4), while every other cell holds '+N+'. Floor keeps every cell the same width. Hover a box to see its cell.'})()</script></div>
