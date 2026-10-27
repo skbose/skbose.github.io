@@ -79,6 +79,24 @@ works for negative odd numbers in Python but fails for them in C, Java, JavaScri
 
 A precision note: the textbook convention is called Euclidean division, where the remainder is always non-negative. For positive divisors, it gives exactly the same answers as floored division. They only differ when the divisor is negative. Since number theory almost always uses positive moduli, Python's `%` matches the mathematician's answer in the cases that matter most.
 
+## A Story: The Rocket That Counted Wrong
+
+Here is why this matters outside of puzzles. Imagine you are writing attitude-control code for a small rocket with two side thrusters. To stay balanced, the thrusters take turns: odd ticks fire the left one, even ticks fire the right one. The countdown runs from T-10 to T-0, so `th` runs from -10 to 0, and the logic could not be simpler:
+
+```python
+for th in range(-10, 1):
+    if th % 2 == 1:
+        fire(LEFT)
+    else:
+        fire(RIGHT)
+```
+
+You test it in Python and it works perfectly. Then the flight computer team ports it to C. Watch both versions run the same countdown:
+
+{{< rocket >}}
+
+In C, `-9 % 2` is `-1`, never `1`. Every odd tick quietly falls through to the `else` branch, so the right thruster fires on every single tick and the left one never fires. Nothing throws, nothing warns, and every test with positive numbers passes. The rocket just spins itself out of the sky. Tick the "apply the fix" box and launch again: `th % 2 != 0` is true for odd numbers of either sign, and both rockets fly.
+
 ## Different Languages, Different Choices
 
 **Truncate toward zero** (remainder takes the sign of the dividend): C (C99 onward), C++, Java, JavaScript, Go, Rust.
