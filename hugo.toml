@@ -5,6 +5,7 @@ theme = "PaperMod"
 paginate = 10
 
 [params]
+  goatcounter = ""
   env = "production"
   description = "Personal blog"
   defaultTheme = "auto"
