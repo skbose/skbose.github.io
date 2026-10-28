@@ -19,3 +19,17 @@ body{font-size:16px;line-height:1.5;background:var(--theme);color:var(--content)
 .first-entry .entry-content p{margin:0 0 14px}
 .first-entry .entry-header h1{font-weight:400}
 .first-entry .entry-header{margin-bottom:14px}
+.tl{position:relative;margin:28px 0 8px}
+.tl::before{content:"";position:absolute;top:4px;bottom:0;left:121px;width:1px;background:var(--border)}
+.tl-item{display:grid;grid-template-columns:84px 48px 1fr;column-gap:14px;padding-bottom:26px}
+.tl-y{text-align:right;color:var(--secondary);font-size:12px;padding-top:4px;white-space:nowrap}
+.tl-b{position:relative;z-index:1;width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:19px;letter-spacing:-.02em}
+.tl-t{font-size:15px;line-height:1.5}
+.tl-t p{margin:0 0 8px}
+.tl-t a{color:var(--link)}
+@media (max-width:600px){
+.tl::before{left:23px}
+.tl-item{grid-template-columns:48px 1fr}
+.tl-y{grid-column:2;grid-row:1;text-align:left;padding-top:0}
+.tl-b{grid-column:1;grid-row:1 / span 2}
+.tl-t{grid-column:2;grid-row:2}}

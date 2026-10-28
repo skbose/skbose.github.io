@@ -3,34 +3,40 @@ title: "About"
 layout: "page"
 ---
 
-I'm Sourav, an AI engineer who likes taking ideas from research to production. I've worked on security analytics, content-abuse defense and on-device AR.
+{{< timeline >}}
 
-## Experience
+{{< tl years="Dec 2024 – now" badge="O" color="#5b5bd6" >}}
+Founding AI Engineer at **Observo AI**, now part of SentinelOne. I led the 0→1 build of Observo's AI stack, mentoring a team of 5 across AI, backend, frontend and DevOps, and worked with sales and marketing to drive 1M+ ARR.
 
-**Founding AI Engineer, Observo AI (acquired by SentinelOne)** · Dec 2024 – present
-- Led the 0→1 build of Observo's AI stack, mentoring a team of 5 across AI, backend, frontend and DevOps; worked with sales and marketing to drive 1M+ ARR.
-- Built low-latency PII and log-schema detection, and fine-tuned LLMs for log intelligence (CIM/OCSF ingestion, anomaly detection, summarization, Grok detection).
-- Shipped an agentic chat-copilot for security researchers, adopted by enterprise customers.
+I built low-latency PII and log-schema detection, fine-tuned LLMs for log intelligence (CIM/OCSF ingestion, anomaly detection, summarization, Grok detection), and [Orion](https://lnkd.in/p/eck8rF55), an agentic chat-copilot for security researchers that enterprise customers adopted.
+{{< /tl >}}
 
-**Senior Software Engineer (Tech Lead, Content Abuse AI), LinkedIn** · Jan 2021 – Dec 2024
-- Led multi-modal and in-house model work that prevents 5M+ spam views weekly; mentored 5+ engineers.
-- Trained an in-house multilingual OCR stack and deployed it on Samza and Kafka.
-- Built video spam classifiers, and "Flash", an in-house framework for scalable LLM training and deployment.
+{{< tl years="2021 – 2024" badge="L" color="#2f6fb3" >}}
+Senior Software Engineer and Tech Lead on the Content Abuse AI team at **LinkedIn**. We built multi-modal defenses that prevent 5M+ spam views a week: fine-tuned multi-modal models, agentic frameworks and in-house pre-training for domain adaptation, over datasets of 10M+.
 
-**Senior Research Engineer, Samsung Research Bangalore** · Jul 2018 – Jan 2021
-- Built on-device AR/VR for flagship camera apps: segmentation, detection and tracking, scene understanding and 3D reconstruction, including human height measurement.
+Highlights: a multilingual end-to-end OCR stack served through Samza and Kafka, video classifiers for spam, and *Flash*, an in-house framework for scalable LLM training and deployment. I mentored 5+ engineers.
+{{< /tl >}}
 
-**Pro bono:** designed the fintech intelligence layer (spend tagging, finance copilot, statement parsing) for a personal-finance startup.
+{{< tl years="2018 – 2021" badge="S" color="#1b3a8a" >}}
+Senior Research Engineer in the Augmented Reality team at **Samsung Research Institute Bangalore**. I built on-device AR/VR for premium camera apps, covering semantic segmentation, multi-modal detection and tracking, scene understanding and multi-view 3D reconstruction, all running on Android.
 
-## Skills
+Projects include [Quick Measure](https://www.samsung.com/au/support/mobile-devices/using-quick-measure/), [AR Doodle](https://www.samsung.com/us/support/answer/ANS10003372/), camera-based human height measurement and single-shot 3D reconstruction, which helped shape the early AR stack on the Galaxy S and Note series.
+{{< /tl >}}
 
-PyTorch, TensorFlow · LangChain, GraphRAG, CrewAI, RAG · MLflow, DVC · large-scale data pipelines · technical leadership and mentoring
+{{< tl years="2018" badge="IIT" color="#8a2b2b" >}}
+M.Tech in Computer Science & Engineering at **IIT Bombay**.
+{{< /tl >}}
 
-## Education
+{{< tl years="2015" badge="H" color="#3d7a5c" >}}
+B.Tech in Computer Science & Engineering at **Heritage Institute of Technology**.
+{{< /tl >}}
 
-- M.Tech, Computer Science & Engineering, IIT Bombay (2018)
-- B.Tech, Computer Science & Engineering, Heritage Institute of Technology (2015)
+{{< /timeline >}}
 
-## Elsewhere
+## Also
+
+**Pro bono:** I designed the fintech intelligence layer for a personal-finance startup, built on the account aggregator framework: automatic spend categorisation, a conversational finance copilot, credit card statement parsing and keyword-based transaction search.
+
+**Skills:** PyTorch and TensorFlow; agentic frameworks (LangChain, GraphRAG, CrewAI, RAG); MLOps (MLflow, DVC); large-scale datasets from research to production; leading AI projects and mentoring engineers.
 
 [GitHub](https://github.com/skbose) · [LinkedIn](https://www.linkedin.com/in/iskbose)
