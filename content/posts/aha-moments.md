@@ -181,6 +181,8 @@ With agentic coding, aha moments like this are rare. The details are mostly blac
 
 This little episode is also a reminder of how the tech landscape got built. It is layers upon layers of design choices that engineers made, sometimes for reasons that no longer apply. A hardware default became a language guarantee, and decades of code now depends on it. Python needed a PEP and years of migration just to change what `/` does on integers. Part of our job is understanding the quirks we inherited and building products around them.
 
+I don't know if the fast-moving AI world will accept me, but I still manually review code and ask Claude about every design choice before starting work. Because of this, I almost always cannot leave agents working overnight, or attempt tasks that are cognitively impossible to review for my meek human brain. I do not write the code myself, but I am in absolute control of the code that is shipped. To me, that sounds like a middle ground. Agents often surprise me with new ways to think about designs, and I often throw impossible ideas at them and watch them implement it with grace (yes, they never say no).
+
 I started coding in C, and I have watched languages get simpler ever since. I feel fortunate to be coding in an era where the way people code is changing. It feels a bit like watching the birth of C. The future is exciting. I just hope we keep some curiosity for the rabbit holes.
 
 ## Sources and Further Reading
