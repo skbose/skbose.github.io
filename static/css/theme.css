@@ -33,3 +33,4 @@ body{font-size:16px;line-height:1.5;background:var(--theme);color:var(--content)
 .tl-y{grid-column:2;grid-row:1;text-align:left;padding-top:0}
 .tl-b{grid-column:1;grid-row:1 / span 2}
 .tl-t{grid-column:2;grid-row:2}}
+.first-entry{min-height:0;border-bottom:1px solid var(--border);padding-bottom:28px;margin-bottom:28px}
