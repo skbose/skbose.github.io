@@ -35,3 +35,7 @@ As I keep exploring all things tech, I plan to share some write-ups for the worl
     name = "About"
     url = "/about/"
     weight = 30
+
+[markup]
+  [markup.highlight]
+    noClasses = false
