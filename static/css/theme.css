@@ -14,3 +14,8 @@ body{font-size:16px;line-height:1.5;background:var(--theme);color:var(--content)
 .post-content a:hover{text-decoration:underline}
 .post-content pre,.post-content .highlight{border:1px solid var(--border);border-radius:4px;background:var(--code-block-bg)}
 .post-content pre code{background:transparent;color:inherit}
+.list,[data-theme=dark] .list{background:var(--theme)}
+.first-entry .entry-content{color:var(--content);font-size:16px;line-height:1.5;margin:0}
+.first-entry .entry-content p{margin:0 0 14px}
+.first-entry .entry-header h1{font-weight:400}
+.first-entry .entry-header{margin-bottom:14px}

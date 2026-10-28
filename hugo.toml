@@ -15,8 +15,16 @@ paginate = 10
   ShowCodeCopyButtons = false
 
   [params.homeInfoParams]
-    Title = "Hi, I'm Sourav 👋"
-    Content = "Notes on things I'm building and learning."
+    Title = "Hello 👋"
+    Content = """
+Thanks for dropping by. I'm Sourav, and I like working with non-deterministic systems.
+
+I started my career at Samsung Research Institute Bangalore, in the Augmented Reality team, where I built [Quick Measure](https://www.samsung.com/au/support/mobile-devices/using-quick-measure/) and [AR Doodle](https://www.samsung.com/us/support/answer/ANS10003372/). At LinkedIn, I was an early member of the Content Quality AI team, building multi-modal defenses that keep the feed safe from abuse.
+
+Two years ago, I joined Observo in search of horizontal learning across the stack. I picked up Kubernetes, what goes into scaling backend microservices (I'm not an expert, but I learned a lot watching the engineering behind it), and building from scratch. There I built [Orion](https://lnkd.in/p/eck8rF55), an agentic assistant for Observo.
+
+As I keep exploring all things tech, I plan to share some write-ups for the world to read. I'm always open to feedback or a conversation about any interesting topic.
+"""
 
   [[params.socialIcons]]
     name = "github"
