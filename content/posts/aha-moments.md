@@ -1,9 +1,7 @@
 ---
 title: "The Aha Moments We Risk Losing"
 date: 2026-10-27
-tags: ["python", "c", "programming", "agentic-coding"]
 summary: "A tiny surprise in Python, -1 // 2, and the rabbit hole it sent me down. With toys to play with."
-ShowToc: true
 ---
 
 ## Introduction

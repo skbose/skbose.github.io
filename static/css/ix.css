@@ -33,3 +33,4 @@
 .ix .rkt{transition:bottom .8s linear,transform .7s ease-in-out,opacity .3s}
 .ix .rkt.crash{transition:bottom 1s cubic-bezier(.5,0,1,.6),transform 1s linear,opacity .3s}
 .ix .cd0{display:block;min-height:3em;font-size:.8rem}
+.ix select{width:auto;min-width:7em}

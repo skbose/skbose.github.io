@@ -7,12 +7,13 @@ paginate = 10
 [params]
   env = "production"
   description = "Personal blog"
-  author = "Sourav Bose"
   defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
+  disableThemeToggle = true
+  hideFooter = true
+  ShowReadingTime = false
+  ShowPostNavLinks = false
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = false
 
   [params.homeInfoParams]
     Title = "Hi, I'm Sourav 👋"
