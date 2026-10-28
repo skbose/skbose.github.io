@@ -26,10 +26,6 @@ Two years ago, I joined Observo in search of horizontal learning across the stac
 As I keep exploring all things tech, I plan to share some write-ups for the world to read. I'm always open to feedback or a conversation about any interesting topic.
 """
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/skbose"
-
 [menu]
   [[menu.main]]
     name = "Posts"
